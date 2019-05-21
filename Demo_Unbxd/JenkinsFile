@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    stages{
+        stage('Maven'){
+            steps{
+                sh 'maven clean install'
+            }
+        }
+        stage('Run'){
+            steps{
+                sh 'javac Demo_Unbxd/src/main/java/Demo_Unbxd/Demo_Unbxd/App.java'
+                sh 'java Demo_Unbxd/src/main/java/Demo_Unbxd/Demo_Unbxd/App'
+            }
+        }
+    }
+}
